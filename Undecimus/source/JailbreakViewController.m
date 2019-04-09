@@ -1805,7 +1805,7 @@ void jailbreak()
             resources = [@[@"/usr/libexec/substrated"] arrayByAddingObjectsFromArray:resources];
         }
         [toInjectToTrustCache addObjectsFromArray:resources];
-        _assert(injectTrustCache(toInjectToTrustCache, GETOFFSET(trustcache), pmap_load_trust_cache) == ERR_SUCCESS, message, true);
+        _assert(injectTrustCache(toInjectToTrustCache, GETOFFSET(trustcache), pmap_load_trust_cache) >= 0, message, true);
         injectedToTrustCache = true;
         toInjectToTrustCache = nil;
         LOG("Successfully injected trust cache.");
